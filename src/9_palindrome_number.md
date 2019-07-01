@@ -1,4 +1,4 @@
-# 9.Palindrome Number
+# 9.回文数
 ## 题目
 [原题链接](https://leetcode.com/problems/palindrome-number/)
 
