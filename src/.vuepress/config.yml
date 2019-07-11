@@ -11,5 +11,5 @@ themeConfig:
       /4_median_of_two_sorted_arrays, /5_longest_palindromic_substring, /6_zigzag_conversion,
       /7_reverse_integer, /8_string_to_integer, /9_palindrome_number, /10_regular_expression_matching,
       /11_container_with_most_water, /12_integer_to_roman, /13_roman_to_integer, /14_longest_common_prefix,
-      /15_ 3sum, /16_ 3Sum_closest, /17_letter combinations of a phone number]
+      /15_ 3sum, /16_ 3Sum_closest, /17_letter combinations of a phone number, /18_4sum]
 title: "LeetCode\u9898\u89E3"
