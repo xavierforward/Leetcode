@@ -13,5 +13,5 @@ themeConfig:
       /11_container_with_most_water, /12_integer_to_roman, /13_roman_to_integer, /14_longest_common_prefix,
       /15_ 3sum, /16_ 3Sum_closest, /17_letter combinations of a phone number, /18_4sum,
       /19_remove nth node from end of list, /20_valid parentheses, /21_merge two sorted
-        lists]
+        lists, /22_generate parentheses]
 title: "LeetCode\u9898\u89E3"
