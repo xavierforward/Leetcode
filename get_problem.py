@@ -21,7 +21,7 @@ with open('_data/problemset.json', 'r') as f_problemset:
     problemset = json.load(f_problemset)
     problem = problemset['stat_status_pairs'][-1 * no] 
     problem_data['title_en'] = '%s.%s' % (no, problem['stat']['question__title'])
-    problem_data['file_name'] = '%s_%s.md' % (no, problem['stat']['question__title'].replace('-', '_').lower())
+    problem_data['file_name'] = '%s_%s.md' % (no, problem['stat']['question__title'].replace(' ', '_').lower())
     problem_data['url'] = '%s/problems/%s/' % (url, problem['stat']['question__title_slug'])
 
 with open('_data/translation.json', 'r') as f_translation:
