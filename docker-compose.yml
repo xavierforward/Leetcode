@@ -1,0 +1,26 @@
+version: '3'
+services:
+
+  lc-vuepress:
+    build: ./vuepress
+    ports:
+    - "8080:8080"
+    volumes:
+    # - ./src:/vuepress/src
+    - ./:/vuepress/
+    working_dir: /vuepress
+    container_name: leetcode-vuepress
+    # depends_on:
+    #   - python
+    command: 
+      - npx 
+      - vuepress
+      - dev
+      - src
+
+  lc-python:
+    build: ./python
+    container_name: leetcode-python
+    working_dir: /vuepress
+    volumes:
+    - ./:/vuepress/

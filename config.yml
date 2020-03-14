@@ -1,0 +1,22 @@
+base: /Leetcode/
+description: "\u4E2A\u4EBALeetCode\u9898\u89E3"
+markdown: {lineNumbers: true}
+post: 8081
+themeConfig:
+  nav:
+  - {link: /, text: Home}
+  - {link: 'https://github.com/zhaozecheng', text: Github}
+  sidebar:
+    /: ['', /1_two_sum, /2_add_two_numbers, /3_longest_substring_without_repeating_characters,
+      /4_median_of_two_sorted_arrays, /5_longest_palindromic_substring, /6_zigzag_conversion,
+      /7_reverse_integer, /8_string_to_integer, /9_palindrome_number, /10_regular_expression_matching,
+      /11_container_with_most_water, /12_integer_to_roman, /13_roman_to_integer, /14_longest_common_prefix,
+      /15_ 3sum, /16_ 3Sum_closest, /17_letter_combinations_of_a_phone_number, /18_4sum,
+      /19_remove_nth_node_from_end_of_list, /20_valid_parentheses, /21_merge_two_sorted_lists,
+      /22_generate_parentheses, /23_merge_k_sorted_lists, /24_swap_nodes_in_pairs,
+      /25_reverse_nodes_in_k-group, /26_remove_duplicates_from_sorted_array, /27_remove_element,
+      /28_implement_strstr(), /29_divide_two_integers, /30_substring_with_concatenation_of_all_words,
+      /31_next_permutation, /32_longest_valid_parentheses, /33_search_in_rotated_sorted_array,
+      /34_find_first_and_last_position_of_element_in_sorted_array, /35_search_insert_position,
+      /36_valid_sudoku, /38_count_and_say, /39_combination_sum, /41_first_missing_positive]
+title: "LeetCode\u9898\u89E3"
