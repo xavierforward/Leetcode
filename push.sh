@@ -14,7 +14,7 @@ git push origin master
 
 # 编译vuepress
 cd ../
-docker-compose run --rm vuepress npx vuepress build src
+docker-compose run --rm lc-vuepress npx vuepress build src
 
 # 提交编译后的静态文件到gitpage分支
 cd src/.vuepress/dist/

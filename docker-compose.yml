@@ -2,7 +2,7 @@ version: '3'
 services:
 
   lc-vuepress:
-    build: ./vuepress
+    build: ./dockerfile/vuepress
     ports:
     - "8080:8080"
     volumes:
@@ -19,7 +19,7 @@ services:
       - src
 
   lc-python:
-    build: ./python
+    build: ./dockerfile/python
     container_name: leetcode-python
     working_dir: /vuepress
     volumes:
