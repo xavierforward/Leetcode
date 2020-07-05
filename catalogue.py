@@ -11,7 +11,7 @@ for i in range(len(flist)):
 flist.insert(0, '')
 
 with open(path2, 'r+') as f:
-    yml_obj = yaml.load(f.read())
+    yml_obj = yaml.load(f.read(), Loader=yaml.FullLoader)
     f.seek(0)
     f.truncate()
     yml_obj['themeConfig']['sidebar']['/'] = flist

@@ -21,4 +21,4 @@ cd src/.vuepress/dist/
 git init
 git add -A
 git commit -m $msg
-git push -f git@github.com:zhaozecheng/Leetcode.git master:gh-pages
+git push -f git@github.com:zhaozecheng/leetcode.git master:gh-pages
