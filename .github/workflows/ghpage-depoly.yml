@@ -1,0 +1,29 @@
+name: ghpage-depoly
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # checkout
+    - name: checkout
+      uses: actions/checkout@v2
+
+    # install vuepress
+    - name: install-vuepress
+      run: |
+        ls
+        pwd
+        yarn add -D vuepress
+      
+    # build
+    - name: vuepress-deploy
+      uses: jenkey2011/vuepress-deploy@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BUILD_SCRIPT: yarn && yarn build
+        BUILD_DIR: /
