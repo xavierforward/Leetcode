@@ -18,4 +18,4 @@ jobs:
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BUILD_SCRIPT: yarn && yarn build
-        # BUILD_DIR: 
+        BUILD_DIR: /
