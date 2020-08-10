@@ -1,0 +1,14 @@
+title: LeetCode题解
+description: Leetcode解题本
+base: /leetcode/
+markdown:
+  lineNumbers: true
+themeConfig:
+  nav:
+  - link: /
+    text: Home
+  - link: https://github.com/xize1993
+    text: Github
+  sidebarDepth: 0
+  sidebar: 
+    /: /
