@@ -1,7 +1,5 @@
 {
   "name": "leetcode",
-  "main": "index.js",
-  "license": "MIT",
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src"
