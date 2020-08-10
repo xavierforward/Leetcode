@@ -26,7 +26,7 @@ jobs:
     - name: install-vuepress
       run: |
         pip install pyyaml
-        python .github/script/generate_vuepress_configuration.py
+        python .github/workflows/script/generate_vuepress_configuration.py
       
     # build
     - name: vuepress-deploy
