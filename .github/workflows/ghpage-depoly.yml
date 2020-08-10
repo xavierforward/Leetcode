@@ -2,7 +2,11 @@ name: ghpage-depoly
 
 on:
   push:
-    branches: [ master ]
+    branches:  
+      - master 
+    paths:
+      - 'src/*'
+      - 'data/*'
 
 jobs:
   build:
