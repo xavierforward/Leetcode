@@ -1,0 +1,42 @@
+name: new-post-by-issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # checkout
+    - name: checkout
+      uses: actions/checkout@v2
+
+    # setup Python
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    # generate new post
+    - name: generate new post
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+      run: |
+        pip install PyGithub
+        python .github/script/generate_new_post.py
+
+    # commit
+    - name: commit file
+      run: |
+        git config --local user.email "xavier.z.zhao@gmail.com"
+        git config --local user.name "xavier"
+        git commit -m "generate new post from github action" -a
+
+    # push 
+    - name: push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
