@@ -3,7 +3,7 @@
 [原题链接](https://leetcode.com/problems/two-sum/)
 
 ## 思路
-使用哈系表提高效率。
+使用哈系表提高效率
 
 ## 代码
 ```java
