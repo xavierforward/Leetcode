@@ -1,0 +1,43 @@
+name: new-post-by-issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # checkout
+    - name: checkout
+      uses: actions/checkout@v2
+
+    # setup Python
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    # move post to target floder
+    - name: move post to target floder
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+      run: |
+        pip install PyGithub
+        python .github/workflows/script/move_post.py
+
+    # commit
+    - name: commit file
+      run: |
+        git config --local user.email "xavier.z.zhao@gmail.com"
+        git config --local user.name "xavier"
+        git add .
+        git commit -m "generate new post from github action" -a
+
+    # push 
+    - name: push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
