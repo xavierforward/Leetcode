@@ -1,4 +1,4 @@
-name: new-post-by-issue
+name: push-post
 
 on:
   issues:
@@ -34,7 +34,7 @@ jobs:
         git config --local user.email "xavier.z.zhao@gmail.com"
         git config --local user.name "xavier"
         git add .
-        git commit -m "generate new post from github action" -a
+        git commit -m "push form github action" -a
 
     # push 
     - name: push changes

@@ -13,13 +13,9 @@ for dirname, dirnames, filenames in os.walk(srcPath):
         pathDict[floderName] = dirname
 
 githubToken = os.environ.get('GITHUB_TOKEN')
-# githubToken = os.environ.get('ee3880a9d12ecc0ea560ee24bd9102fc89dc96c2')
 githubRepo = os.environ.get('GITHUB_REPOSITORY')
-# githubRepo = os.environ.get('xize1993/leetcode')
-# g = Github(githubToken)
-# repo = g.get_repo(githubRepo)
-g = Github('ee3880a9d12ecc0ea560ee24bd9102fc89dc96c2')
-repo = g.get_repo('xize1993/leetcode')
+g = Github(githubToken)
+repo = g.get_repo(githubRepo)
 closedIssues = repo.get_issues(state='closed')
 lastClosedIssue = sorted(closedIssues, key=lambda x: x.closed_at, reverse=True)[0]
 targetDir = ''
