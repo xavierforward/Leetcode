@@ -41,4 +41,9 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        directory: src/
+        
+    - name: Invoke workflow without inputs
+      uses: benc-uk/workflow-dispatch@v1
+      with:
+        workflow: vuepress-depoly
+        token: ${{ secrets.GITHUB_TOKEN }}
