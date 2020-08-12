@@ -1,8 +1,8 @@
-name: new-post-by-issue
+name: move-post
 
 on:
   issues:
-    types: [opened]
+    types: [closed]
 
 jobs:
   build:
@@ -13,20 +13,20 @@ jobs:
     - name: checkout
       uses: actions/checkout@v2
 
-    # setup Python
+    # setup python
     - name: setup python
       uses: actions/setup-python@v2
       with:
         python-version: '3.8'
 
-    # generate new post
-    - name: generate new post
+    # move post to target floder
+    - name: move post to target floder
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_REPOSITORY: ${{ github.repository }}
       run: |
         pip install PyGithub
-        python .github/workflows/script/generate_new_post.py
+        python .github/workflows/script/move_post.py
 
     # commit
     - name: commit file
@@ -34,7 +34,7 @@ jobs:
         git config --local user.email "xavier.z.zhao@gmail.com"
         git config --local user.name "xavier"
         git add .
-        git commit -m "generate new post from github action" -a
+        git commit -m "push form github action" -a
 
     # push 
     - name: push changes

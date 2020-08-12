@@ -1,4 +1,4 @@
-name: ghpage-depoly
+name: vuepress-depoly
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
     - name: install-vuepress
       run: |
         pip install pyyaml
-        python .github/workflows/script/generate_vuepress_configuration.py
+        python .github/workflows/script/vuepress_config_generator.py
       
     # build
     - name: vuepress-deploy

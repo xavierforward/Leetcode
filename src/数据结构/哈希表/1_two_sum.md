@@ -1,5 +1,5 @@
 ---
-title: 两数之和
+title: 1.两数之和
 author: 西泽
 date: 2020-08-10 20:00:00
 tags:
