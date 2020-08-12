@@ -18,8 +18,8 @@ def generateProblem(no):
         problem_data['title_cn'] = '%s.%s' % (no, translations['data']['translations'][no-1]['title'])
 
     # generate the Markdown file
-    if not os.path.exists('src/new post'):
-        os.mkdir('src/new post')
+    if not os.path.exists('new post'):
+        os.mkdir('new post')
     with open('new post/%s' % problem_data['file_name'], 'w') as mdf:
         mdf.write('# %s' % problem_data['title_cn'])
         mdf.write('\n')
