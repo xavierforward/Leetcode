@@ -27,17 +27,27 @@ jobs:
       run: |
         pip install PyGithub
         python .github/workflows/script/post_generator.py
+     
+
+    # commit changes
+    - name: commit changes
+      uses: actions-go/push@master
+      with:
+        commit-message: '[Auto] update pre-puilt dist packages'
+        remote: origin
+        author-email: 'xavier.z.zhao@gmail.com'
+        author-name: 'xavier' 
 
     # commit
-    - name: commit file
-      run: |
-        git config --local user.email "xavier.z.zhao@gmail.com"
-        git config --local user.name "xavier"
-        git add .
-        git commit -m "generate new post from github action" -a
+#     - name: commit file
+#       run: |
+#         git config --local user.email "xavier.z.zhao@gmail.com"
+#         git config --local user.name "xavier"
+#         git add .
+#         git commit -m "generate new post from github action" -a
 
     # push 
-    - name: push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+#     - name: push changes
+#       uses: ad-m/github-push-action@master
+#       with:
+#         github_token: ${{ secrets.GITHUB_TOKEN }}
