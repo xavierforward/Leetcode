@@ -31,12 +31,9 @@ jobs:
 
     # commit changes
     - name: commit changes
-      uses: actions-go/push@master
+      uses: actions-js/push@master
       with:
-        commit-message: '[Auto] update pre-puilt dist packages'
-        remote: origin
-        author-email: 'xavier.z.zhao@gmail.com'
-        author-name: 'xavier' 
+        github_token: ${{ secrets.GITHUB_TOKEN }}
 
     # commit
 #     - name: commit file
