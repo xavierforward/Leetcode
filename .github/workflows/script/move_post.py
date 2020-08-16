@@ -10,7 +10,8 @@ pathDict = {}
 for dirname, dirnames, filenames in os.walk(srcPath):
     floderName = dirname[dirname.rfind('/')+1:]
     if (len(floderName) > 0):
-        pathDict[floderName] = dirname
+        key = floderName[floderName.find('.')+1:] if floderName.find('.') > 0 else floderName
+        pathDict[key] = dirname
 
 githubToken = os.environ.get('GITHUB_TOKEN')
 githubRepo = os.environ.get('GITHUB_REPOSITORY')
