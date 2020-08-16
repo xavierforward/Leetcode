@@ -44,7 +44,5 @@ if __name__ == "__main__":
     repo = g.get_repo(githubRepo)
     open_issues = repo.get_issues(state='open')
     for issue in open_issues:
-        if (issue.title.startswith('post:')
-            and repo.owner == issue.user
-            and 'post' in list(map(lambda l : l.name, issue.labels))):
+        if (repo.owner == issue.user and len(issue.labels) > 0):
             generateProblem(int(issue.title[issue.title.find(':')+1:]))

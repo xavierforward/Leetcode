@@ -7,7 +7,8 @@ def loadFileTree(path):
   从目录提取侧边栏配置信息
   '''
   fileTree = list(filter(lambda x: x != '.vuepress' and x != 'index.md', os.listdir(path)))
-  fileTree.sort(key = lambda x: int(x[:x.index('_')]) if x.find('_') > 0 else 0)
+  fileTree.sort()
+  fileTree.sort(key=lambda x: int(x[:x.index('_')]) if x.find('_') > 0 else 0)
   for i in range(len(fileTree)):
     if (fileTree[i].endswith('.md')):
       fileTree[i] = path[path.find('/'):] + fileTree[i][:fileTree[i].index('.md')]
@@ -30,17 +31,16 @@ def wirteConfig(fileTree):
       yml_obj = yaml.load(f.read(), Loader=yaml.FullLoader)
       yml_obj['themeConfig']['sidebar']['/'] = fileTree
   
+  os.mkdir('src/.vuepress')
   configPath = 'src/.vuepress/config.yml'
-  if not os.path.exists(configPath):
-    os.mkdir('src/.vuepress')
-    open(configPath, 'w').close()
-  with open(configPath, 'r+') as f:
-    f.seek(0)
-    f.truncate()
-    yaml.dump(yml_obj, f, encoding='utf-8',allow_unicode=True)
+  with open(configPath, 'w') as f:
+    yaml.dump(yml_obj, f, encoding='utf-8', allow_unicode=True)
 
-if __name__ == "__main__":
+def excute():
   srcPath = 'src/'
   fileTree = loadFileTree(srcPath)
   fileTree.insert(0, '')
   wirteConfig(fileTree)
+
+if __name__ == "__main__":
+  excute()
