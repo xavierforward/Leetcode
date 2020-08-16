@@ -28,7 +28,6 @@ if (lastClosedIssue.title.startswith('post:')):
             targetDir = pathDict[label.name]
 
 if targetDir:
-    os.mkdir(targetDir)
     files = list(filter(lambda x: x.startswith(no) and x.endswith('.md'), os.listdir(postPath)))
     if (len(files) > 0):
         os.rename(postPath + files[0], targetDir + '/' + files[0])
